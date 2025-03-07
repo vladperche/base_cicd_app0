@@ -6,19 +6,19 @@ on:
 
 jobs:
   
+  get-vars:
+    uses: vladperche/base_cicd_np/.github/actions/share-variables@main
+
   build:
 
     runs-on: ubuntu-latest
     
     steps:
 
-      - name: 'Carregar variáveis compartilhadas'
-        uses: vladperche/base_cicd_np/.github/actions/share-variables@main
-
       - name: 'Executar Template'
         uses: vladperche/base_cicd_templates/.github/actions/install-dependencies@main
         with:
-          account-id: $AWS_ACCOUNT_ID
-          env-name: $AWS_ENVIRONMENT
-          node-version: $NODE_VERSION
+          account-id: ${{ needs.get-vars.outputs.AWS_ACCOUNT_ID }}
+          env-name: ${{ needs.get-vars.outputs.AWS_ENVIRONMENT }}
+          node-version: ${{ needs.get-vars.outputs.NODE_VERSION }}
 
