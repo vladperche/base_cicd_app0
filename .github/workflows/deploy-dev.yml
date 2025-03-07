@@ -19,7 +19,7 @@ jobs:
       - name: 'Executar Template'
         uses: vladperche/base_cicd_templates/.github/actions/install-dependencies@main
         with:
-          account-id: ${{ needs.get-vars.outputs.AWS_ACCOUNT_ID }}
-          env-name: ${{ needs.get-vars.outputs.AWS_ENVIRONMENT }}
-          node-version: ${{ needs.get-vars.outputs.NODE_VERSION }}
+          account-id: ${{needs.get-vars.outputs.AWS_ACCOUNT_ID}}
+          env-name: ${{needs.get-vars.outputs.AWS_ENVIRONMENT}}
+          node-version: ${{needs.get-vars.outputs.NODE_VERSION}}
 
