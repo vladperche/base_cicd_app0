@@ -7,7 +7,7 @@ on:
 jobs:
   
   get-vars:
-    uses: vladperche/base_cicd_np/.github/actions/share-variables@main
+    uses: vladperche/base_cicd_np/.github/workflows/export-vars.yml@main
 
   build:
 
